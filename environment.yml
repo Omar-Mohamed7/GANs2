@@ -1,0 +1,14 @@
+name: dates_generator
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch>=2.1
+  - torchvision
+  - cpuonly           # replace with pytorch-cuda=12.1 for GPU
+  - pip
+  - pip:
+      - numpy>=1.24
+      - matplotlib>=3.7
