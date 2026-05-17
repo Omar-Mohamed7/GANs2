@@ -129,7 +129,7 @@ class ConditionalVAE(nn.Module):
         """
         B, T, V = logits.shape
         recon = F.cross_entropy(
-            logits.view(B * T, V), targets.view(B * T),
+            logits.reshape(B * T, V), targets.reshape(B * T),
             ignore_index=PAD_IDX
         )
         kl = -0.5 * torch.mean(1 + logvar - mu.pow(2) - logvar.exp())
